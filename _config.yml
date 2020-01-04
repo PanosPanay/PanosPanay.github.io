@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
+title: 良多          # 站点标题
+subtitle: 步履不停   # 副标题
+description: 记录日常学习，主要编程语言C++、Python，领域涵盖深度学习（计算机视觉）等
+keywords: Python, C++, 计算机视觉, 深度学习
+author: 良多
+language: zh-CN
 timezone: ''
 
 # URL
@@ -40,7 +40,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true # 在建立文件时，Hexo 会自动建立一个与文章同名的文件夹，您可以把与该文章相关的所有资源都放到此文件夹内，这样就可以更方便的使用资源
 relative_link: false
 future: true
 highlight:
@@ -90,7 +90,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next   # 主题
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -98,3 +98,10 @@ deploy:
   type: git
   repo: git@github.com:PanosPanay/PanosPanay.github.io.git
   branch: master
+
+# search 搜索全站的功能
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
