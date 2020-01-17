@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-17T15:15:15.702Z</updated>
+  <updated>2020-01-17T15:18:28.997Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2020/01/17/blog-transfer/"/>
     <id>http://yoursite.com/2020/01/17/blog-transfer/</id>
     <published>2020-01-17T15:05:34.000Z</published>
-    <updated>2020-01-17T15:15:15.702Z</updated>
+    <updated>2020-01-17T15:18:28.997Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="hexo博客迁移（换电脑继续更新博客）"><a href="#hexo博客迁移（换电脑继续更新博客）" class="headerlink" title="hexo博客迁移（换电脑继续更新博客）"></a>hexo博客迁移（换电脑继续更新博客）</h1><p>shh</p><p>克隆</p><p>安装nodejs和npm，nodejs添加到路径</p><p><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">https://www.zhihu.com/question/21193762</a></p><p><a href="https://blog.csdn.net/qq_36759224/article/details/100411949" target="_blank" rel="noopener">https://blog.csdn.net/qq_36759224/article/details/100411949</a></p><p>下图提交的第三条指令改为git push origin source</p><p><img src="/2020/01/17/blog-transfer/Blog\PanosPanay.github.io\source\_posts\blog-transfer\1579273945554.png" alt="1579273945554"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="hexo博客迁移（换电脑继续更新博客）"><a href="#hexo博客迁移（换电脑继续更新博客）" class="headerlink" title="hexo博客迁移（换电脑继续更新博客）"></a>hexo博客迁移（换电脑继续更新博客）</h1><p>shh</p><p>克隆</p><p>安装nodejs和npm，nodejs添加到路径</p><p><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">https://www.zhihu.com/question/21193762</a></p><p><a href="https://blog.csdn.net/qq_36759224/article/details/100411949" target="_blank" rel="noopener">https://blog.csdn.net/qq_36759224/article/details/100411949</a></p><p>下图提交的第三条指令改为git push origin source</p><p>发布改为 sh deploy.sh</p><p><img src="/2020/01/17/blog-transfer/Blog\PanosPanay.github.io\source\_posts\blog-transfer\1579273945554.png" alt="1579273945554"></p>]]></content>
     
     <summary type="html">
     
@@ -90,11 +90,11 @@
       <category term="多媒体" scheme="http://yoursite.com/categories/%E5%A4%9A%E5%AA%92%E4%BD%93/"/>
     
     
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
       <category term="BMP" scheme="http://yoursite.com/tags/BMP/"/>
     
       <category term="多媒体" scheme="http://yoursite.com/tags/%E5%A4%9A%E5%AA%92%E4%BD%93/"/>
-    
-      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
     
   </entry>
   

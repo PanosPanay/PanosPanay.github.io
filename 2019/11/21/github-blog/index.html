@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="良多" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: true,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="用GitHub Pages和Hexo架搭建博客 参考了如下教程： [超全面！如何用 GitHub 从零开始搭建一个博客 ？]: https:&#x2F;&#x2F;url.cn&#x2F;5xQgPFy [用 GitHub + Hexo 建立你的第一个博客]: https:&#x2F;&#x2F;url.cn&#x2F;5iCNSb6  1、在GitHub上建立仓库首先需要有GitHub账号 在GitHub新建一个仓库(Repository)，名称为 {u">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用GitHub Pages和Hexo博客框架搭建博客">
+<meta property="og:url" content="http://yoursite.com/2019/11/21/github-blog/index.html">
+<meta property="og:site_name" content="良多">
+<meta property="og:description" content="用GitHub Pages和Hexo架搭建博客 参考了如下教程： [超全面！如何用 GitHub 从零开始搭建一个博客 ？]: https:&#x2F;&#x2F;url.cn&#x2F;5xQgPFy [用 GitHub + Hexo 建立你的第一个博客]: https:&#x2F;&#x2F;url.cn&#x2F;5iCNSb6  1、在GitHub上建立仓库首先需要有GitHub账号 在GitHub新建一个仓库(Repository)，名称为 {u">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/new-repository.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/create-repository.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/nodejs.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/hexo-init-prepare.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/init-blog.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/deployment.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/github-master.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/branches1.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/change-default-page1.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/change-default-page2.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/site.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/theme-next.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/muse.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/scheme.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/mist.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/pisces.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/favicon1.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/favicon2.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/favicon3.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/avatar.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/avatar2.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/code.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/code2.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/back2top.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/top.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/reading-process.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/reading.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/bookmark.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/bookmark2.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/github-banner.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/github-banner2.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/oauth.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/comments.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/gittalk.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/gittalk2.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/pangu.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/pangu2.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/math.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/pjax.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/image-folder.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/image1.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/image2.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/image3.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/tags.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/categories.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/tag2.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/search.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/search1.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/search2.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/404.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/21/github-blog/cname.png">
+<meta property="article:published_time" content="2019-11-21T02:42:06.000Z">
+<meta property="article:modified_time" content="2020-01-17T14:50:47.863Z">
+<meta property="article:author" content="良多">
+<meta property="article:tag" content="GitHub">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2019/11/21/github-blog/new-repository.png">
+
+<link rel="canonical" href="http://yoursite.com/2019/11/21/github-blog/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>用GitHub Pages和Hexo博客框架搭建博客 | 良多</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">良多</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">步履不停</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/PanosPanay/PanosPanay.github.io" class="github-corner" title="良多的 GitHub" aria-label="良多的 GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/21/github-blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="良多">
+      <meta itemprop="description" content="记录日常学习，主要编程语言C++、Python，领域涵盖深度学习（计算机视觉）等">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="良多">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          用GitHub Pages和Hexo博客框架搭建博客
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-21 10:42:06" itemprop="dateCreated datePublished" datetime="2019-11-21T10:42:06+08:00">2019-11-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-17 22:50:47" itemprop="dateModified" datetime="2020-01-17T22:50:47+08:00">2020-01-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index">
+                    <span itemprop="name">记录</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="用GitHub-Pages和Hexo架搭建博客"><a href="#用GitHub-Pages和Hexo架搭建博客" class="headerlink" title="用GitHub Pages和Hexo架搭建博客"></a>用GitHub Pages和Hexo架搭建博客</h1><blockquote>
+<p>参考了如下教程：</p>
+<p>[超全面！如何用 GitHub 从零开始搭建一个博客 ？]: <a href="https://url.cn/5xQgPFy" target="_blank" rel="noopener">https://url.cn/5xQgPFy</a></p>
+<p>[用 GitHub + Hexo 建立你的第一个博客]: <a href="https://url.cn/5iCNSb6" target="_blank" rel="noopener">https://url.cn/5iCNSb6</a></p>
+</blockquote>
+<h2 id="1、在GitHub上建立仓库"><a href="#1、在GitHub上建立仓库" class="headerlink" title="1、在GitHub上建立仓库"></a>1、在GitHub上建立仓库</h2><p>首先需要有GitHub账号</p>
+<p>在GitHub新建一个仓库(Repository)，名称为 {username}.github.io ，注意这个名称必须是 github.io 结尾。比如我的GitHub用户名为 PanosPanay ，我就新建一个 PanosPanay.github.io 。</p>
+<p><img src="/2019/11/21/github-blog/new-repository.png" alt="new-repository"></p>
+<p><img src="/2019/11/21/github-blog/create-repository.png" alt="create-repository"></p>
+<h2 id="2、搭建环境"><a href="#2、搭建环境" class="headerlink" title="2、搭建环境"></a>2、搭建环境</h2><h3 id="2-1-安装Node-js"><a href="#2-1-安装Node-js" class="headerlink" title="2.1 安装Node.js"></a>2.1 安装Node.js</h3><p>下载地址：<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/download/</a></p>
+<p>按照提示安装即可。</p>
+<p>正常安装完成后，环境变量就已经被配置好了，能正常使用<code>npm</code>命令。可以在桌面按住Shift键，鼠标右键在此处打开PowerShell（命令行）窗口（或者cmd打开命令行；或者右键Git Bash Here打开命令行），依次输入如下命令，分别出现对应版本号代表安装成功。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/11/21/github-blog/nodejs.png" alt="nodejs"></p>
+<h3 id="2-2-安装Hexo"><a href="#2-2-安装Hexo" class="headerlink" title="2.2 安装Hexo"></a>2.2 安装Hexo</h3><p>打开命令行，输入如下命令回车，等待安装。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /	<span class="comment"># 返回C盘根目录，这一条命令是否使用看个人习惯，在这里可省略</span></span><br><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>安装过程中可能有一些WARN，可以不用管，之后的步骤能正常使用<code>hexo</code>即表示安装配置成功。</p>
+<h2 id="3、初始化博客-项目"><a href="#3、初始化博客-项目" class="headerlink" title="3、初始化博客/项目"></a>3、初始化博客/项目</h2><p>这一步通过<code>Hexo</code>命令创建一个项目，并将其在本地跑起来。</p>
+<p>首先，在任意位置新建一个文件夹，我在C盘新建了Blog文件夹。</p>
+<p>然后，打开新建的文件夹(<code>C:\Blog</code>)，右键Git Bash Here；或者在此处打开PowerShell；或者在打开的命令行中通过cd指令定位到刚才新建的文件夹。</p>
+<p><img src="/2019/11/21/github-blog/hexo-init-prepare.png" alt="hexo-init-prepare"></p>
+<p>然后，使用如下命令创建项目：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init panospanay	<span class="comment"># init之后跟的是项目名称，即要创建的博客名称</span></span><br></pre></td></tr></table></figure>
+<p>上述命令执行后会在<code>C:\Blog</code>文件夹中生成<code>panospanay</code>文件夹，且该文件夹下包含了<code>Hexo</code>的初始化文件。</p>
+<p>然后，在命令行中通过cd指令转到<code>panospanay</code>文件夹（<code>cd C:\Blog\panospanay</code>）；或者打开<code>panospanay</code>文件夹后在此打开命令行/Git Bash Here，输入如下指令，将<code>Hexo</code>编译成HTML代码。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+<p>然后，运行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>运行以上命令后，命令行出现如下提示：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:<span class="number">4000</span> . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<p>此时，打开浏览器，输入地址 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> ，就可以看到最原始的博客。我我当时没有截图，从参考的教程中截了一张图，大概是这样的：</p>
+<p><img src="/2019/11/21/github-blog/init-blog.png" alt="init-blog"></p>
+<p>到这里，博客的雏形就完成了。之后对博客进行各种配置改动，或者发布新博文，也可以通过<code>hexo server</code>在本地运行，浏览器输入 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 预览。</p>
+<h2 id="4、部署博客"><a href="#4、部署博客" class="headerlink" title="4、部署博客"></a>4、部署博客</h2><p>这一步将初始化的博客部署到GitHub Page。</p>
+<p>首先，打开根目录（项目的根目录即<code>panospanay</code>文件夹），用VS Code打开<code>_config.yml</code>文件，找到Deployment部分，将第一步在GitHub新建的仓库地址粘贴过来，修改如下：</p>
+<p><img src="/2019/11/21/github-blog/deployment.png" alt="deployment"></p>
+<p>然后，额外安装一个支持 Git 的部署插件，名字叫做 hexo-deployer-git，在<code>panospany</code>文件夹下打开命令行（后面无特殊说明都在此位置运行命令行），执行如下命令：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>安装成功后，继续执行以下部署命令：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>执行以上命令后，命令行出现类似如下提示，说明部署成功：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">INFO  Deploying: git</span><br><span class="line">INFO  Clearing .deploy_git folder...</span><br><span class="line">INFO  Copying files from public folder...</span><br><span class="line">INFO  Copying files from extend dirs...</span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working directory clean</span><br><span class="line">Counting objects: <span class="number">46</span>, done.</span><br><span class="line">Delta compression using up to <span class="number">8</span> threads.</span><br><span class="line">Compressing objects: <span class="number">100</span>% (<span class="number">36</span>/<span class="number">36</span>), done.</span><br><span class="line">Writing objects: <span class="number">100</span>% (<span class="number">46</span>/<span class="number">46</span>), <span class="number">507.66</span> KiB | <span class="number">0</span> bytes/s, done.</span><br><span class="line">Total <span class="number">46</span> (delta <span class="number">3</span>), reused <span class="number">0</span> (delta <span class="number">0</span>)</span><br><span class="line">remote: Resolving deltas: <span class="number">100</span>% (<span class="number">3</span>/<span class="number">3</span>), done.</span><br><span class="line">To git@github.com:NightTeam/nightteam.github.io.git</span><br><span class="line"> * [new branch]      HEAD -&gt; master</span><br><span class="line">Branch master set up to track remote branch master from git@github.com:NightTeam/nightteam.github.io.git.</span><br><span class="line">INFO  Deploy done: git</span><br></pre></td></tr></table></figure>
+<p>此时即可访问和Github Repository同名的链接来打开博客，比如我的仓库名称为<code>panospanay.github.io</code>，我访问 <a href="https://panospanay.gihub.io/" target="_blank" rel="noopener">https://panospanay.gihub.io/</a> 即可打开博客，与第3步本地运行打开 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 预览到的博客内容一致。</p>
+<p>注意，在第一次打开 <a href="https://panospanay.gihub.io/" target="_blank" rel="noopener">https://panospanay.gihub.io/</a> 这个链接时可能出现404，但之后重新打开就可以了，而且https和http都可以打开。</p>
+<p>打开GitHub仓库转到master分支，可以看到Hexo上传了如下内容，实际上就是博客文件夹下面的 public 文件夹下的所有内容，Hexo 把编译之后的静态页面内容上传到 GitHub 的 master 分支上面去了。</p>
+<p><img src="/2019/11/21/github-blog/github-master.png" alt="github-master"></p>
+<p>然后，通过执行如下命令，新建一个source分支，用来存储博客源码到GitHub。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git checkout -b source</span><br><span class="line">git add -A</span><br><span class="line">git commit -m <span class="string">"init blog"</span></span><br><span class="line">git remote add origin git@github.com:&#123;username&#125;/&#123;username&#125;.github.io.git</span><br><span class="line">git push origin source</span><br></pre></td></tr></table></figure>
+<p>执行成功后，可以到GitHub上切换默认分支为source，不过也可以不切换。</p>
+<p><img src="/2019/11/21/github-blog/branches1.png" alt="branches1"></p>
+<p><img src="/2019/11/21/github-blog/change-default-page1.png" alt="change-default-page1"></p>
+<p><img src="/2019/11/21/github-blog/change-default-page2.png" alt="change-default-page2"></p>
+<h2 id="5、配置站点信息"><a href="#5、配置站点信息" class="headerlink" title="5、配置站点信息"></a>5、配置站点信息</h2><p>这一步进行博客的基本配置，包括主题和一些其他内容。</p>
+<h3 id="5-1-修改博客站点基本配置"><a href="#5-1-修改博客站点基本配置" class="headerlink" title="5.1 修改博客站点基本配置"></a>5.1 修改博客站点基本配置</h3><p>VS Code打开根目录（panospanay文件夹）下的 _config.yml 文件，找到 Site 区域，配置如下信息：</p>
+<p><img src="/2019/11/21/github-blog/site.png" alt="site"></p>
+<h2 id="6、修改主题"><a href="#6、修改主题" class="headerlink" title="6、修改主题"></a>6、修改主题</h2><p>主题配置，这里我使用的是Next主题。</p>
+<p>首先，在themes文件夹下建立next文件夹。</p>
+<p>在根目录下，通过命令行中执行如下命令，执行完毕后Next主题就会出现在themes/next 文件夹下。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>然后，打开根目录下的 _config.yml 文件，找到 theme 字段，修改为 next 即可。</p>
+<p><img src="/2019/11/21/github-blog/theme-next.png" alt="theme-next"></p>
+<p>然后在命令行中执行<code>hexo server</code>开启本地服务，浏览器输入 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 即可预览博客更改。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/11/21/github-blog/muse.png" alt="muse"></p>
+<h2 id="7、主题配置"><a href="#7、主题配置" class="headerlink" title="7、主题配置"></a>7、主题配置</h2><p>针对Next主题，还可以进行更详细的配置。</p>
+<p>主题配置需要修改的配置文件是 themes/next 文件夹下的 _config.yml ，用VS Code打开 themes/next/_config.yml 文件。以下若未特别强调都是指，配置文件指的都是在这个文件。</p>
+<h3 id="7-1-样式"><a href="#7-1-样式" class="headerlink" title="7.1 样式"></a>7.1 样式</h3><p>修改 scheme 的值可以更改布局样式。我选择的是Pisces样式。</p>
+<p><img src="/2019/11/21/github-blog/scheme.png" alt="scheme"></p>
+<p>默认的Muse样式见第6步的图</p>
+<p>Mist样式：</p>
+<p><img src="/2019/11/21/github-blog/mist.png" alt="mist"></p>
+<p>Pisces似乎和Gemini看不出区别：</p>
+<p><img src="/2019/11/21/github-blog/pisces.png" alt="pisces"></p>
+<h3 id="7-2-favicon"><a href="#7-2-favicon" class="headerlink" title="7.2 favicon"></a>7.2 favicon</h3><p>favicon是站点在浏览器标签栏的图标，默认是Hexo的小图标：</p>
+<p><img src="/2019/11/21/github-blog/favicon1.png" alt="favicon1"></p>
+<p>可以在网站 <a href="https://realfavicongenerator.net" target="_blank" rel="noopener">https://realfavicongenerator.net</a> 上传自己的图片，进行转换，打包下载适配各种尺寸和不同设备的小图标。将这些图标拷贝到 themes/next/source/images 文件夹中。</p>
+<p>然后在配置文件中找到 favicon 配置项，修改如下：</p>
+<p><img src="/2019/11/21/github-blog/favicon2.png" alt="favicon2"></p>
+<p>配置后战点图标如下：</p>
+<p><img src="/2019/11/21/github-blog/favicon3.png" alt="favicon3"></p>
+<h3 id="7-3-avatar"><a href="#7-3-avatar" class="headerlink" title="7.3 avatar"></a>7.3 avatar</h3><p>avatar是显示在作者信息旁的头像。</p>
+<p>将自己喜爱的头像图片 avatar.gif （也可以是其他格式的图片，eg. png）放置到 themes/next/source/images 文件夹，然后在配置文件中找到avatar配置项，修改如下：</p>
+<p><img src="/2019/11/21/github-blog/avatar.png" alt="avatar"></p>
+<p>修改后效果图如下：</p>
+<p><img src="/2019/11/21/github-blog/avatar2.png" alt="avatar2"></p>
+<h3 id="7-4-rss"><a href="#7-4-rss" class="headerlink" title="7.4 rss"></a>7.4 rss</h3><p>安装 hexo-generator-feed ，可开启站点SSR订阅。在项目根目录下，即 panospanay 文件夹中打开命令行，运行如下命令。</p>
+<h3 id="7-5-code"><a href="#7-5-code" class="headerlink" title="7.5 code"></a>7.5 code</h3><p>代码块的修改，修改配置文件如下：</p>
+<p><img src="/2019/11/21/github-blog/code.png" alt="code"></p>
+<p>配置后效果图：</p>
+<p><img src="/2019/11/21/github-blog/code2.png" alt="code2"></p>
+<h3 id="7-6-top"><a href="#7-6-top" class="headerlink" title="7.6 top"></a>7.6 top</h3><p>快速返回网站顶端按钮，修改配置文件如下：</p>
+<p><img src="/2019/11/21/github-blog/back2top.png" alt="back2top"></p>
+<p>效果图：</p>
+<p><img src="/2019/11/21/github-blog/top.png" alt="top"></p>
+<h3 id="7-7-reading-process"><a href="#7-7-reading-process" class="headerlink" title="7.7 reading_process"></a>7.7 reading_process</h3><p>阅读进度，站点顶部进度条。修改配置文件如下：</p>
+<p><img src="/2019/11/21/github-blog/reading-process.png" alt="reading-process"></p>
+<p>效果图：</p>
+<p><img src="/2019/11/21/github-blog/reading.png" alt="reading"></p>
+<h3 id="7-9-bookmark"><a href="#7-9-bookmark" class="headerlink" title="7.9 bookmark"></a>7.9 bookmark</h3><p>书签，可以在下次打开页面的时候快速定位到上次的位置。修改配置文件如下：</p>
+<p><img src="/2019/11/21/github-blog/bookmark.png" alt="bookmark"></p>
+<p>效果图：</p>
+<p><img src="/2019/11/21/github-blog/bookmark2.png" alt="bookmark2"></p>
+<h3 id="7-10-github-banner"><a href="#7-10-github-banner" class="headerlink" title="7.10 github_banner"></a>7.10 github_banner</h3><p>在博客页面右上角显示 GitHub 图标，点击之后可以跳转到源代码页面。修改配置文件如下：</p>
+<p><img src="/2019/11/21/github-blog/github-banner.png" alt="github-banner"></p>
+<p>效果图：</p>
+<p><img src="/2019/11/21/github-blog/github-banner2.png" alt="github-banner2"></p>
+<h3 id="7-11-gittalk"><a href="#7-11-gittalk" class="headerlink" title="7.11 gittalk"></a>7.11 gittalk</h3><p>第三方评论功能，gittalk利用GitHub 的 Issue 来当评论</p>
+<p>首先，打开链接 <a href="https://github.com/settings/applications/new" target="_blank" rel="noopener">https://github.com/settings/applications/new</a> 注册一个 OAuth Application：</p>
+<p><img src="/2019/11/21/github-blog/oauth.png" alt="oauth"></p>
+<p>点击注册后会看到Client ID、Client Secret。</p>
+<p>在配置文件中修改comments配置：</p>
+<p><img src="/2019/11/21/github-blog/comments.png" alt="comments"></p>
+<p>继续在配置文件中修改gittalk配置：</p>
+<p><img src="/2019/11/21/github-blog/gittalk.png" alt="gittalk"></p>
+<p>效果图（已使用GitHub授权登录）：</p>
+<p><img src="/2019/11/21/github-blog/gittalk2.png" alt="gittalk2"></p>
+<h3 id="7-12-pangu"><a href="#7-12-pangu" class="headerlink" title="7.12 pangu"></a>7.12 pangu</h3><p>开启此选项，在编译生成页面的时候，中英文之间会自动添加空格，使得排版更美观。</p>
+<p>修改配置文件如下：</p>
+<p><img src="/2019/11/21/github-blog/pangu.png" alt="pangu"></p>
+<p>效果图：</p>
+<p><img src="/2019/11/21/github-blog/pangu2.png" alt="pangu2"></p>
+<h3 id="7-13-math"><a href="#7-13-math" class="headerlink" title="7.13 math"></a>7.13 math</h3><p>Next主题提供了两个公式渲染引擎，分别是 mathjax 和 katex，后者相对前者来说渲染速度更快，而且不需要 JavaScript 的额外支持，但后者支持的功能现在还不如前者丰富。所以这里选择的是mathjax。</p>
+<p>修改配置文件如下：</p>
+<p><img src="/2019/11/21/github-blog/math.png" alt="math"></p>
+<h3 id="7-14-pjax"><a href="#7-14-pjax" class="headerlink" title="7.14 pjax"></a>7.14 pjax</h3><p>利用 Ajax 技术实现了局部页面刷新，既可以实现 URL 的更换，又可以做到无刷新加载。</p>
+<p>首先，修改配置文件如下：</p>
+<p><img src="/2019/11/21/github-blog/pjax.png" alt="pjax"></p>
+<p>然后切换到 next 目录下，运行如下命令，安装依赖库：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd themes/next</span><br><span class="line">git clone https://github.com/theme-next/theme-next-pjax source/lib/pjax</span><br></pre></td></tr></table></figure>
+<h3 id="7-15-其他"><a href="#7-15-其他" class="headerlink" title="7.15 其他"></a>7.15 其他</h3><p>Next主题的其他设置可以参考官方文档： <a href="https://theme-next.org/docs/" target="_blank" rel="noopener">https://theme-next.org/docs/</a></p>
+<h2 id="8、文章-博文"><a href="#8、文章-博文" class="headerlink" title="8、文章/博文"></a>8、文章/博文</h2><p>关于如何发布新博文，可以参考《新建文件》<a href="https://panospanay.github.io/2019/11/20/test_new/" target="_blank" rel="noopener">https://panospanay.github.io/2019/11/20/test_new/</a></p>
+<p>在根目录下，调用命令行（/ Git Bash），执行如下命令：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new 文件名</span><br></pre></td></tr></table></figure>
+<p>比如，我要新建名为 “test.md” 的文章，则执行命令：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new test</span><br></pre></td></tr></table></figure>
+<p>执行后，创建的文章会出现在 <code>source/_posts</code> 文件夹下，是 MarkDown 格式。</p>
+<p>然后，打开创建的 “test.md” 文件，在文章开头通过如下格式添加必要信息：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标题	# 自动创建，可修改，与文件名不同，是显示在博客上的标题</span><br><span class="line">date: 日期	# 自动创建，eg.2019-11-20 23:13:18</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">- </span>标签1		# 注意'- 标签'之间的空格，漏写空格会导致博客更新不上去</span><br><span class="line"><span class="bullet">- </span>标签2</span><br><span class="line"><span class="bullet">- </span>标签3</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">- </span>分类1</span><br><span class="line"><span class="bullet">- </span>分类2</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>然后在下方用markdown格式编辑博客即可。</p>
+<h3 id="8-1-上传图片到博客"><a href="#8-1-上传图片到博客" class="headerlink" title="8.1 上传图片到博客"></a>8.1 上传图片到博客</h3><p>如果博客/markdown文件中要显示图片，需要进行如下操作：</p>
+<p>首先，在项目的配置文件（注意是博客根目录下的 _config.yml 文件）中找到 post_asset_folder 字段，修改如下：</p>
+<p><img src="/2019/11/21/github-blog/image-folder.png" alt="image-folder"></p>
+<p>然后，在博客的根目录下执行如下指令：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+<p>执行上述操作后，在建立文件（<code>Hexo new 文件名</code>）时，Hexo 会自动建立一个与文章同名的文件夹，我们可以把与该文章相关的所有资源（包括图片）都放到此文件夹内，这样就可以更方便的使用资源。</p>
+<p>验证一下，在根目录下执行以下命令：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new github-blog</span><br></pre></td></tr></table></figure>
+<p>可以看到此时source/_posts 目录下生成github-blog文件夹和github-blog.md文件：</p>
+<p><img src="/2019/11/21/github-blog/image1.png" alt="image1"></p>
+<p>然后，将写博文所需的图片放到生成的github-blog文件夹（博文同名文件夹）下：</p>
+<p><img src="/2019/11/21/github-blog/image2.png" alt="image2"></p>
+<p>然后，在博文中用如下格式插入图片：</p>
+<p><img src="/2019/11/21/github-blog/image3.png" alt="image3"></p>
+<h2 id="9、标签页和分类页"><a href="#9、标签页和分类页" class="headerlink" title="9、标签页和分类页"></a>9、标签页和分类页</h2><p>当前博客只有首页和归档，可以给博客添加标签页和分类页</p>
+<h3 id="9-1-标签页"><a href="#9-1-标签页" class="headerlink" title="9.1 标签页"></a>9.1 标签页</h3><p>在根目录（C:\Blog\panospanay）执行如下命令：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>执行命令后自动生成 source/tags/index.md 文件，内容如下：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2019-11-20 23:16:47</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>我们可以自行添加一个 type 字段来指定页面的类型：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type: tags</span><br><span class="line">comments: false</span><br></pre></td></tr></table></figure>
+<p>然后，在主题配置文件  _config.yml 中修改menu字段，将这个页面的链接添加到主菜单里面：</p>
+<p><img src="/2019/11/21/github-blog/tags.png" alt="tags"></p>
+<h3 id="9-2-分类页"><a href="#9-2-分类页" class="headerlink" title="9.2 分类页"></a>9.2 分类页</h3><p>在根目录（C:\Blog\panospanay）执行如下命令：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+<p>执行命令后自动生成 source/categories/index.md 文件，内容如下：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-11-20 23:18:59</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>我们可以自行添加一个 type 字段来指定页面的类型：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type: categories</span><br><span class="line">comments: false</span><br></pre></td></tr></table></figure>
+<p>然后，在主题配置文件  _config.yml 中修改menu字段，将这个页面的链接添加到主菜单里面：</p>
+<p><img src="/2019/11/21/github-blog/categories.png" alt="categories"></p>
+<p>最后的效果：</p>
+<p><img src="/2019/11/21/github-blog/tag2.png" alt="tag2"></p>
+<h2 id="10、搜索页"><a href="#10、搜索页" class="headerlink" title="10、搜索页"></a>10、搜索页</h2><p>首先，在根目录运行如下命令，安装 hexo-generator-searchdb 插件。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+<p>然后，在项目的配置文件（注意是根目录下的 _config.yml 文件），在最下面添加如下配置：</p>
+<p><img src="/2019/11/21/github-blog/search.png" alt="search"></p>
+<p>然后，在主题的配置文件（themes/next/_config.yml 文件），修改配置文件如下：</p>
+<p><img src="/2019/11/21/github-blog/search1.png" alt="search1"></p>
+<p>效果图如下，可以对全站的博客内容进行搜索：</p>
+<p><img src="/2019/11/21/github-blog/search2.png" alt="search2"></p>
+<h2 id="11、404页面"><a href="#11、404页面" class="headerlink" title="11、404页面"></a>11、404页面</h2><p>还需要添加一个 404 页面，直接在根目录的 source 文件夹中新建一个 404.md 文件即可。</p>
+<p><img src="/2019/11/21/github-blog/404.png" alt="404"></p>
+<p>文件的内容可以参考如下：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 404 Not Found</span><br><span class="line">date: 2019-11-20 23:26:26</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"> <span class="xml"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span> </span><br><span class="line"><span class="code">     对不起，您所访问的页面不存在或者已删除。</span></span><br><span class="line"><span class="code">     您可以&lt;a href="https://panospanay.github.io/"&gt;点击此处&lt;/a&gt;返回首页。</span></span><br><span class="line"><span class="code">     &lt;/center&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="xml"><span class="tag">&lt;<span class="name">blockquote</span> <span class="attr">class</span>=<span class="string">"blockquote-center"</span>&gt;</span></span> </span><br><span class="line"><span class="code">     良多</span></span><br><span class="line"><span class="code">    &lt;/blockquote&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="12、-Hexo的其他配置"><a href="#12、-Hexo的其他配置" class="headerlink" title="12、 Hexo的其他配置"></a>12、 Hexo的其他配置</h2><p>参考官方文档：<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/</a> 查看更多的配置。</p>
+<h2 id="12、-部署脚本"><a href="#12、-部署脚本" class="headerlink" title="12、 部署脚本"></a>12、 部署脚本</h2><p>首先，在根目录下新建一个deploy.sh脚本文件，内容如下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>然后，每次要发布的时候我们只要在根目录执行如下命令，即可完成博客的更新：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh deploy.sh</span><br></pre></td></tr></table></figure>
+<p>至此，我们有了2种博客更新查看方式：</p>
+<ul>
+<li>在对博客进行配置更改或者编辑修改博文时，可以在根目录执行如下指令打开本地服务器，然后浏览器打开链接 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000</a> ，即可实时查看预览：</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在我们完成配置或者博文增改，确认要发布时，可以在根目录执行如下指令，即可部署发布，部署成功后，浏览器打开链接  <a href="https://panospanay.gihub.io/" target="_blank" rel="noopener">https://panospanay.gihub.io/</a> 即可打开博客查看更新。不过有时候更新可能需要一段时间。</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh deploy.sh</span><br></pre></td></tr></table></figure>
+<h2 id="13、-自定义域名"><a href="#13、-自定义域名" class="headerlink" title="13、 自定义域名"></a>13、 自定义域名</h2><p>自定义域名是需要自己先购买域名的，因此没有购买域名的可以跳过这一步。</p>
+<p>申请域名可以使用Freenom，网站链接 <a href="https://my.freenom.com/domains.php" target="_blank" rel="noopener">https://my.freenom.com/domains.php</a> ，提供最多一年的免费顶级域名。</p>
+<p>在 GitHub 的 Repository 里，找到 Settings，拉到下面，可以看到有个 GitHub Pages 的配置项，如图所示：</p>
+<p><img src="/2019/11/21/github-blog/cname.png" alt="cname"></p>
+<p>首先，填好上面的域名地址。此时上图的绿色提示部分可能出现红色报错。因为我们还没有添加CNAME解析。刚配置完自定义域名的时候可能 Enforce HTTPS 这个选项是不可用的，一段时间后等到其可以勾选了，直接勾选即可，这样整个博客就会变成 HTTPS 的协议的了。</p>
+<p>然后，在source目录下新建一个 CNAME 文件（没有后缀），文件内容就是你的域名地址。</p>
+<p>部署发布之后，就配置好了。</p>
+<p>如果有未购买域名的小伙伴执行了上面的操作，发现删除了CNAME文件，清空了GitHub仓库设置里的域名地址，可是访问博客仍然会跳转到原来自定义的域名，这是因为chrome浏览器缓存问题，可换个浏览器或者过段时间再访问即可成功。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+              <a href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag"># 博客</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/20/test_new/" rel="next" title="新建文件">
+                  <i class="fa fa-chevron-left"></i> 新建文件
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/11/22/Python-Day12-Regular-Expression/" rel="prev" title="Python-Day12-正则表达式">
+                  Python-Day12-正则表达式 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#用GitHub-Pages和Hexo架搭建博客"><span class="nav-number">1.</span> <span class="nav-text">用GitHub Pages和Hexo架搭建博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、在GitHub上建立仓库"><span class="nav-number">1.1.</span> <span class="nav-text">1、在GitHub上建立仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、搭建环境"><span class="nav-number">1.2.</span> <span class="nav-text">2、搭建环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-安装Node-js"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-安装Hexo"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 安装Hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、初始化博客-项目"><span class="nav-number">1.3.</span> <span class="nav-text">3、初始化博客&#x2F;项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、部署博客"><span class="nav-number">1.4.</span> <span class="nav-text">4、部署博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、配置站点信息"><span class="nav-number">1.5.</span> <span class="nav-text">5、配置站点信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-修改博客站点基本配置"><span class="nav-number">1.5.1.</span> <span class="nav-text">5.1 修改博客站点基本配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、修改主题"><span class="nav-number">1.6.</span> <span class="nav-text">6、修改主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、主题配置"><span class="nav-number">1.7.</span> <span class="nav-text">7、主题配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-样式"><span class="nav-number">1.7.1.</span> <span class="nav-text">7.1 样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-favicon"><span class="nav-number">1.7.2.</span> <span class="nav-text">7.2 favicon</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3-avatar"><span class="nav-number">1.7.3.</span> <span class="nav-text">7.3 avatar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-4-rss"><span class="nav-number">1.7.4.</span> <span class="nav-text">7.4 rss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-5-code"><span class="nav-number">1.7.5.</span> <span class="nav-text">7.5 code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-6-top"><span class="nav-number">1.7.6.</span> <span class="nav-text">7.6 top</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-7-reading-process"><span class="nav-number">1.7.7.</span> <span class="nav-text">7.7 reading_process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-9-bookmark"><span class="nav-number">1.7.8.</span> <span class="nav-text">7.9 bookmark</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-10-github-banner"><span class="nav-number">1.7.9.</span> <span class="nav-text">7.10 github_banner</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-11-gittalk"><span class="nav-number">1.7.10.</span> <span class="nav-text">7.11 gittalk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-12-pangu"><span class="nav-number">1.7.11.</span> <span class="nav-text">7.12 pangu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-13-math"><span class="nav-number">1.7.12.</span> <span class="nav-text">7.13 math</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-14-pjax"><span class="nav-number">1.7.13.</span> <span class="nav-text">7.14 pjax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-15-其他"><span class="nav-number">1.7.14.</span> <span class="nav-text">7.15 其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8、文章-博文"><span class="nav-number">1.8.</span> <span class="nav-text">8、文章&#x2F;博文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-上传图片到博客"><span class="nav-number">1.8.1.</span> <span class="nav-text">8.1 上传图片到博客</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9、标签页和分类页"><span class="nav-number">1.9.</span> <span class="nav-text">9、标签页和分类页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1-标签页"><span class="nav-number">1.9.1.</span> <span class="nav-text">9.1 标签页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-分类页"><span class="nav-number">1.9.2.</span> <span class="nav-text">9.2 分类页</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10、搜索页"><span class="nav-number">1.10.</span> <span class="nav-text">10、搜索页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11、404页面"><span class="nav-number">1.11.</span> <span class="nav-text">11、404页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12、-Hexo的其他配置"><span class="nav-number">1.12.</span> <span class="nav-text">12、 Hexo的其他配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12、-部署脚本"><span class="nav-number">1.13.</span> <span class="nav-text">12、 部署脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13、-自定义域名"><span class="nav-number">1.14.</span> <span class="nav-text">13、 自定义域名</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="良多"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">良多</p>
+  <div class="site-description" itemprop="description">记录日常学习，主要编程语言C++、Python，领域涵盖深度学习（计算机视觉）等</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">良多</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.5.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '03289b55c6292d17766b',
+      clientSecret: 'b6995cb7d052f35a27ecd5eeae5d294f1ecd47f0',
+      repo: 'PanosPanay.github.io',
+      owner: 'PanosPanay',
+      admin: ['良多'],
+      id: 'a3b94da8cfabd1ce5ba42e3e9d97222b',
+        language: 'zh-CN',
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
+
+    </div>
+</body>
+</html>

@@ -9,6 +9,7 @@
 <p><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">https://www.zhihu.com/question/21193762</a></p>
 <p><a href="https://blog.csdn.net/qq_36759224/article/details/100411949" target="_blank" rel="noopener">https://blog.csdn.net/qq_36759224/article/details/100411949</a></p>
 <p>下图提交的第三条指令改为git push origin source</p>
+<p>发布改为 sh deploy.sh</p>
 <p><img src="/2020/01/17/blog-transfer/Blog\PanosPanay.github.io\source\_posts\blog-transfer\1579273945554.png" alt="1579273945554"></p>
 ]]></content>
       <categories>
@@ -235,9 +236,9 @@
         <category>多媒体</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>BMP</tag>
         <tag>多媒体</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
