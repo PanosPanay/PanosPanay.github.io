@@ -21,4 +21,10 @@ https://www.zhihu.com/question/21193762
 
 https://blog.csdn.net/qq_36759224/article/details/100411949
 
+
+
+下图提交的第三条指令改为git push origin source
+
+发布改为 sh deploy.sh
+
 ![1579273945554](D:\Blog\PanosPanay.github.io\source\_posts\blog-transfer\1579273945554.png)
