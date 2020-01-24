@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-17T15:18:28.997Z</updated>
+  <updated>2020-01-24T02:10:18.875Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="http://yoursite.com/2020/01/17/blog-transfer/"/>
     <id>http://yoursite.com/2020/01/17/blog-transfer/</id>
     <published>2020-01-17T15:05:34.000Z</published>
-    <updated>2020-01-17T15:18:28.997Z</updated>
+    <updated>2020-01-24T02:10:18.875Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="hexo博客迁移（换电脑继续更新博客）"><a href="#hexo博客迁移（换电脑继续更新博客）" class="headerlink" title="hexo博客迁移（换电脑继续更新博客）"></a>hexo博客迁移（换电脑继续更新博客）</h1><p>shh</p><p>克隆</p><p>安装nodejs和npm，nodejs添加到路径</p><p><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">https://www.zhihu.com/question/21193762</a></p><p><a href="https://blog.csdn.net/qq_36759224/article/details/100411949" target="_blank" rel="noopener">https://blog.csdn.net/qq_36759224/article/details/100411949</a></p><p>下图提交的第三条指令改为git push origin source</p><p>发布改为 sh deploy.sh</p><p><img src="/2020/01/17/blog-transfer/Blog\PanosPanay.github.io\source\_posts\blog-transfer\1579273945554.png" alt="1579273945554"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="hexo博客迁移（换电脑继续更新博客）"><a href="#hexo博客迁移（换电脑继续更新博客）" class="headerlink" title="hexo博客迁移（换电脑继续更新博客）"></a>hexo博客迁移（换电脑继续更新博客）</h1><p>更换电脑/重装系统后的操作：</p><ul><li><p>安装Git（廖雪峰的Git教程<a href="https://www.liaoxuefeng.com/wiki/896043488029600）" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/896043488029600）</a></p></li><li><p>安装完Git后，Git Bash输入如下指令设置信息</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.name <span class="string">"Your Name"</span><span class="comment"># 替换成自己的名字</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.email <span class="string">"email@example.com"</span><span class="comment"># 替换成自己的邮箱地址</span></span></span><br></pre></td></tr></table></figure></li><li><p>设置 SSH 密钥。使用如下命令生成SSH密钥</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ssh-keygen</span></span><br></pre></td></tr></table></figure></li><li><p>输入以上命令后，一路按enter键采用默认值</p></li><li><p>输入如下命令查看并复制SSH密钥</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat ~/.ssh/id_rsa.pub</span></span><br></pre></td></tr></table></figure><p>复制SSH密钥，格式如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-rsa ...</span><br></pre></td></tr></table></figure></li><li><p>到GitHub的SSH设置页面（导航栏头像 - Settings - SSH and GPG keys)，点击New SSH key按钮，将复制的内容粘贴到Key输入框中，再填写标题，eg.”My New PC”，最后点击“Add SHH key”按钮保存</p></li><li><p>克隆。</p><p>在本地新建博客文件夹，比如”D:\Blog”</p><p>在该文件夹下Git Bash Here，使用如下命令拷贝博客的GitHub仓库到本地（默认分支为source）</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> git@github.com:PanosPanay/PanosPanay.github.io.git</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">clone</span>后面的一串可以通过点击GitHub博客仓库的Clone or download复制得到</span></span><br></pre></td></tr></table></figure><p><img src="/2020/01/17/blog-transfer/1579830393814.png" alt="1579830393814"></p></li><li><p>安装Node.js</p><p>下载地址：<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/download/</a></p><p>按照提示安装即可。</p><p>正常安装完成后，环境变量就已经被配置好了，能正常使用 <code>npm</code> 命令。</p><p>输入如下命令分别出现对应的版本号即代表安装成功</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> node -v</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm -v</span></span><br></pre></td></tr></table></figure></li><li><p>如果成功执行上述步骤后，在执行下述步骤中的<code>hexo</code>命令，遇到报错<code>bash: hexo: command not found</code>，则需要配置环境变量。参考<a href="https://blog.csdn.net/qq_36759224/article/details/100411949" target="_blank" rel="noopener">https://blog.csdn.net/qq_36759224/article/details/100411949</a></p></li><li><p>在本地新拷贝的<code>D:\Blog\PanosPanay.github.io</code>文件夹下，Git Bash Here，分别输入如下命令(参考：<a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">https://www.zhihu.com/question/21193762</a>)</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo-deployer-git</span></span><br></pre></td></tr></table></figure></li><li><p>将原来电脑上博客文件夹下的如下文件复制粘贴到当前博客文件夹（主题等配置）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">_config.yml</span><br><span class="line">package.json</span><br><span class="line">scaffolds&#x2F;</span><br><span class="line">source&#x2F;</span><br><span class="line">themes&#x2F;</span><br><span class="line">deploy.sh</span><br></pre></td></tr></table></figure></li><li><p>更新博客，增改博文</p></li><li><p>分别执行如下命令，将改动推送到Github</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git add .</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">"..."</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git push origin <span class="built_in">source</span> <span class="comment"># 之后可直接 git push</span></span></span><br></pre></td></tr></table></figure></li><li><p>发布到master分支</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sh deploy.sh</span></span><br></pre></td></tr></table></figure></li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;hexo博客迁移（换电脑继续更新博客）&quot;&gt;&lt;a href=&quot;#hexo博客迁移（换电脑继续更新博客）&quot; class=&quot;headerlink&quot; title=&quot;hexo博客迁移（换电脑继续更新博客）&quot;&gt;&lt;/a&gt;hexo博客迁移（换电脑继续更新博客）&lt;/h1&gt;&lt;p&gt;sh
+        &lt;h1 id=&quot;hexo博客迁移（换电脑继续更新博客）&quot;&gt;&lt;a href=&quot;#hexo博客迁移（换电脑继续更新博客）&quot; class=&quot;headerlink&quot; title=&quot;hexo博客迁移（换电脑继续更新博客）&quot;&gt;&lt;/a&gt;hexo博客迁移（换电脑继续更新博客）&lt;/h1&gt;&lt;p&gt;更换
       
     
     </summary>
@@ -90,11 +90,11 @@
       <category term="多媒体" scheme="http://yoursite.com/categories/%E5%A4%9A%E5%AA%92%E4%BD%93/"/>
     
     
-      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
-    
       <category term="BMP" scheme="http://yoursite.com/tags/BMP/"/>
     
       <category term="多媒体" scheme="http://yoursite.com/tags/%E5%A4%9A%E5%AA%92%E4%BD%93/"/>
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
     
   </entry>
   
