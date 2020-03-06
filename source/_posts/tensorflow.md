@@ -111,5 +111,54 @@ categories:
    [43 50]], shape=(2, 2), dtype=int32)
    ```
 
-7. 
+
+## 2、错误记录
+
+### 1、` module 'tensorflow' has no attribute 'keras'`
+
+错误详情：
+
+我建立了一个目录如下：
+
+![image-20200306170836393](tensorflow/image-20200306170836393.png)
+
+然后我在该目录下新建了tensorboard.py，运行时报错`module 'tensorflow' has no attribute 'keras'`。并且去运行以上其他py文件也出现该报错，但是在建立tensorboard.py前运行都正常。
+
+tensorboard.py开头如下：
+
+```python
+import tensorflow as td
+from MLP import MLP, MNISTLoader
+```
+
+现在运行该文件夹下所有的py文件都报如标题所示错误，且都指向MLP.py文件的一行：
+
+```python
+class MLP(tf.keras.Model):
+```
+
+去网上找解决方案，基本都是：
+
+1、更新tensorflow
+
+2、更新keras
+
+但我都试过了，没有用。而且，我实在`pip install tensorflow`时，自动安装的keras，因此不可能出现keras和tensorflow版本不匹配的问题。
+
+于是，我把tensorboard.py文件删了，结果其他所有py文件都能正常运行了。
+
+我也不知道这是为什么，不知道tensorboard.py有啥问题。改代码来自https://tf.wiki/zh/basic/tools.html#id3。只是：
+
+```python
+from zh.model.mnist.mlp import MLP
+from zh.model.utils import MNISTLoader
+```
+
+修改为：
+
+```python
+from MLP import MLP, MNISTLoader
+```
+
+感觉很玄学。我就放弃了这个文件，直接删掉。然后把它的训练过程可视化代码插入到checkpoint.py中，能够正常运行。
 
