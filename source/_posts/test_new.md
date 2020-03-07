@@ -6,7 +6,7 @@ tags:
 - GitHub
 - Hexo
 categories:
-- 记录
+- 教程
 ---
 
 # 新建文件

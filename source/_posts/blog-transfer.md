@@ -6,7 +6,7 @@ tags:
 - Hexo
 - 博客
 categories:
-- 记录
+- 教程
 ---
 
 # hexo博客迁移（换电脑继续更新博客）

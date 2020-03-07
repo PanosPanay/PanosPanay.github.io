@@ -6,7 +6,7 @@ tags:
 - GitHub
 - Hexo
 categories:
-- 记录
+- 教程
 ---
 
 # 用GitHub Pages和Hexo架搭建博客
