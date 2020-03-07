@@ -345,6 +345,24 @@ Next主题提供了两个公式渲染引擎，分别是 mathjax 和 katex，后�
 
 ![math](./github-blog/math.png)
 
+还需要在用到数学公式md文件的Front-matter里打开mathjax开关，如下面代码的末尾所示：
+
+```markdown
+---
+title: deeplearning.ai_C2W2_optimization_algorithms
+date: 2020-03-07 19:58:55
+tags:
+- deeplearning
+- 吴恩达
+- 深度学习
+categories:
+- 深度学习
+mathjax: true
+---
+```
+
+之所以在文章头里设置开关`mathjax: true`，是因为只有使用了公式的md文件的显示才需要加载 Mathjax，其他md文件的渲染页面速度不受影响。
+
 ### 7.14 pjax
 
 利用 Ajax 技术实现了局部页面刷新，既可以实现 URL 的更换，又可以做到无刷新加载。

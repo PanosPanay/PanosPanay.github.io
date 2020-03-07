@@ -7,6 +7,7 @@ tags:
 - 深度学习
 categories:
 - 深度学习
+mathjax: true
 ---
 
 # C2W2 优化算法
