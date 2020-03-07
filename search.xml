@@ -1092,6 +1092,9 @@ decay\_rate和\alpha_0是两个需要调整的超参数</script></li>
 <h3 id="7-13-math"><a href="#7-13-math" class="headerlink" title="7.13 math"></a>7.13 math</h3><p>Next主题提供了两个公式渲染引擎，分别是 mathjax 和 katex，后者相对前者来说渲染速度更快，而且不需要 JavaScript 的额外支持，但后者支持的功能现在还不如前者丰富。所以这里选择的是mathjax。</p>
 <p>修改配置文件如下：</p>
 <p><img src="/2019/11/21/github-blog/math.png" alt="math"></p>
+<p>还需要在用到数学公式md文件的Front-matter里打开mathjax开关，如下面代码的末尾所示：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: deeplearning.ai<span class="emphasis">_C2W2_</span>optimization_algorithms</span><br><span class="line">date: 2020-03-07 19:58:55</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">- </span>deeplearning</span><br><span class="line"><span class="bullet">- </span>吴恩达</span><br><span class="line"><span class="bullet">- </span>深度学习</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">- </span>深度学习</span><br><span class="line">mathjax: true</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>之所以在文章头里设置开关<code>mathjax: true</code>，是因为只有使用了公式的md文件的显示才需要加载 Mathjax，其他md文件的渲染页面速度不受影响。</p>
 <h3 id="7-14-pjax"><a href="#7-14-pjax" class="headerlink" title="7.14 pjax"></a>7.14 pjax</h3><p>利用 Ajax 技术实现了局部页面刷新，既可以实现 URL 的更换，又可以做到无刷新加载。</p>
 <p>首先，修改配置文件如下：</p>
 <p><img src="/2019/11/21/github-blog/pjax.png" alt="pjax"></p>
