@@ -46,26 +46,22 @@
   };
 </script>
 
-  <meta name="description" content="BMP图像处理本篇博客记录完成《数字媒体内容综合设计与实验》的图像处理实验的学习过程。要求实现一个显示bmp文件的程序（语言不限），并实现图像亮度、对比度调整，图像平移、放大、旋转和镜像。  参考： https:&#x2F;&#x2F;blog.csdn.net&#x2F;lanbing510&#x2F;article&#x2F;details&#x2F;8176231  BMP文件格式1. 位图文件头(bmp file header) - 14字节">
+  <meta name="description" content="C2W1 深度学习的实践层面吴恩达深度学习C2W1 深度学习的实践层面 如何配置训练集、验证集、测试集 如何分析偏差、方差，如何处理高偏差or高方差or高偏差和高方差共存的问题 如何在神经网络中应用不同形式的正则化（正则化解决高方差过拟合问题） L2正则化 dropout 其他正则化（数据扩增、early stopping）   加快神经网络训练速度的技巧（归一化输入） 梯度检验（调试后向传播是否">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BMP图像处理-Python实现">
-<meta property="og:url" content="http://yoursite.com/2019/12/01/BMP/index.html">
+<meta property="og:title" content="deeplearning.ai_C2W1_practical_aspects_of_deep_learning">
+<meta property="og:url" content="http://yoursite.com/2020/03/07/deeplearning-ai-C2W1-practical-aspects-of-deep-learning/index.html">
 <meta property="og:site_name" content="良多">
-<meta property="og:description" content="BMP图像处理本篇博客记录完成《数字媒体内容综合设计与实验》的图像处理实验的学习过程。要求实现一个显示bmp文件的程序（语言不限），并实现图像亮度、对比度调整，图像平移、放大、旋转和镜像。  参考： https:&#x2F;&#x2F;blog.csdn.net&#x2F;lanbing510&#x2F;article&#x2F;details&#x2F;8176231  BMP文件格式1. 位图文件头(bmp file header) - 14字节">
+<meta property="og:description" content="C2W1 深度学习的实践层面吴恩达深度学习C2W1 深度学习的实践层面 如何配置训练集、验证集、测试集 如何分析偏差、方差，如何处理高偏差or高方差or高偏差和高方差共存的问题 如何在神经网络中应用不同形式的正则化（正则化解决高方差过拟合问题） L2正则化 dropout 其他正则化（数据扩增、early stopping）   加快神经网络训练速度的技巧（归一化输入） 梯度检验（调试后向传播是否">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/2019/12/01/BMP/001.png">
-<meta property="og:image" content="http://yoursite.com/2019/12/01/BMP/bmp-file-header.png">
-<meta property="og:image" content="http://yoursite.com/2019/12/01/BMP/bitmap-information.png">
-<meta property="article:published_time" content="2019-12-01T13:16:01.000Z">
-<meta property="article:modified_time" content="2020-01-17T14:50:47.855Z">
+<meta property="article:published_time" content="2020-03-07T12:05:48.000Z">
+<meta property="article:modified_time" content="2020-03-07T12:09:57.017Z">
 <meta property="article:author" content="良多">
-<meta property="article:tag" content="BMP">
-<meta property="article:tag" content="多媒体">
-<meta property="article:tag" content="Python">
+<meta property="article:tag" content="deeplearning">
+<meta property="article:tag" content="吴恩达">
+<meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2019/12/01/BMP/001.png">
 
-<link rel="canonical" href="http://yoursite.com/2019/12/01/BMP/">
+<link rel="canonical" href="http://yoursite.com/2020/03/07/deeplearning-ai-C2W1-practical-aspects-of-deep-learning/">
 
 
 <script id="page-configurations">
@@ -79,7 +75,7 @@
   };
 </script>
 
-  <title>BMP图像处理-Python实现 | 良多</title>
+  <title>deeplearning.ai_C2W1_practical_aspects_of_deep_learning | 良多</title>
   
 
 
@@ -218,7 +214,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/01/BMP/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/07/deeplearning-ai-C2W1-practical-aspects-of-deep-learning/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -231,7 +227,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          BMP图像处理-Python实现
+          deeplearning.ai_C2W1_practical_aspects_of_deep_learning
         </h1>
 
         <div class="post-meta">
@@ -240,24 +236,18 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-12-01 21:16:01" itemprop="dateCreated datePublished" datetime="2019-12-01T21:16:01+08:00">2019-12-01</time>
+              <time title="创建时间：2020-03-07 20:05:48 / 修改时间：20:09:57" itemprop="dateCreated datePublished" datetime="2020-03-07T20:05:48+08:00">2020-03-07</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-17 22:50:47" itemprop="dateModified" datetime="2020-01-17T22:50:47+08:00">2020-01-17</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%A4%9A%E5%AA%92%E4%BD%93/" itemprop="url" rel="index">
-                    <span itemprop="name">多媒体</span>
+                  <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">深度学习</span>
                   </a>
                 </span>
             </span>
@@ -273,200 +263,51 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="BMP图像处理"><a href="#BMP图像处理" class="headerlink" title="BMP图像处理"></a>BMP图像处理</h1><p>本篇博客记录完成《数字媒体内容综合设计与实验》的图像处理实验的学习过程。要求实现一个显示bmp文件的程序（语言不限），并实现图像亮度、对比度调整，图像平移、放大、旋转和镜像。</p>
-<blockquote>
-<p>参考：</p>
-<p><a href="https://blog.csdn.net/lanbing510/article/details/8176231" target="_blank" rel="noopener">https://blog.csdn.net/lanbing510/article/details/8176231</a></p>
-</blockquote>
-<h2 id="BMP文件格式"><a href="#BMP文件格式" class="headerlink" title="BMP文件格式"></a>BMP文件格式</h2><h3 id="1-位图文件头-bmp-file-header-14字节"><a href="#1-位图文件头-bmp-file-header-14字节" class="headerlink" title="1. 位图文件头(bmp file header) - 14字节"></a>1. 位图文件头(bmp file header) - 14字节</h3><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>字段</th>
-<th>字节数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>bfType</code></td>
-<td>2</td>
-<td>文件类型<br>BMP文件这两个字节为0x4d42，对应字符’BM’</td>
-</tr>
-<tr>
-<td><code>bfSize</code></td>
-<td>4</td>
-<td>文件大小</td>
-</tr>
-<tr>
-<td><code>bfReserved1</code></td>
-<td>2</td>
-<td>保留字段，必须设为0</td>
-</tr>
-<tr>
-<td><code>bfReserved2</code></td>
-<td>2</td>
-<td>保留字段，必须设为0</td>
-</tr>
-<tr>
-<td><code>bfOffBits</code></td>
-<td>4</td>
-<td>从文件头到位图数据的偏移量，即：<br>偏移量=文件头+信息头+调色板长度</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>用UltraEdit打开图片001.bmp（24位真彩色bmp图）：</p>
-<p><img src="/2019/12/01/BMP/001.png" alt="001"></p>
-<p><img src="/2019/12/01/BMP/bmp-file-header.png" alt="bmp-file-header"></p>
-<p>注意读取字节反向</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>字段</th>
-<th>值</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>bfType</code></td>
-<td>0x4D42</td>
-<td>BM</td>
-</tr>
-<tr>
-<td><code>bfSize</code></td>
-<td>0x0017057A = 1508730字节 = 1.43MB</td>
-<td>等同于右键图片属性中显示的大小</td>
-</tr>
-<tr>
-<td><code>bfOffBits</code></td>
-<td>0x00000036 = 54字节</td>
-<td>= 文件头14 + 信息头40 + 调色板0</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="2-位图信息头-bitmap-information-40字节"><a href="#2-位图信息头-bitmap-information-40字节" class="headerlink" title="2. 位图信息头(bitmap information) - 40字节"></a>2. 位图信息头(bitmap information) - 40字节</h3><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>字段</th>
-<th>字节数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>biSize</code></td>
-<td>4</td>
-<td>信息头的大小<br>BMP文件为0x28，即40字节</td>
-</tr>
-<tr>
-<td><code>biWidth</code></td>
-<td>4</td>
-<td>图像的宽，单位是像素</td>
-</tr>
-<tr>
-<td><code>biHeight</code></td>
-<td>4</td>
-<td>图像的高，单位是像素</td>
-</tr>
-<tr>
-<td><code>biPlanes</code></td>
-<td>2</td>
-<td>颜色平面数，总设为1</td>
-</tr>
-<tr>
-<td><code>biBitCount</code></td>
-<td>2</td>
-<td>每像素比特数，=比特数/像素数<br>即每个像素用多少位表示</td>
-</tr>
-<tr>
-<td><code>biCompression</code></td>
-<td>4</td>
-<td>图像的压缩类型<br>最常用的是0，即BI_RGB格式，表示不压缩</td>
-</tr>
-<tr>
-<td><code>biSizeImage</code></td>
-<td>4</td>
-<td>位图数据的大小<br>图像大小=文件大小bfSize-偏移量bfOffBits<br>BI_RGB格式时，可设置为0</td>
-</tr>
-<tr>
-<td><code>biXPelsPerMeter</code></td>
-<td>4</td>
-<td>水平分辨率，单位是像素/米，有符号整数</td>
-</tr>
-<tr>
-<td><code>biYPelsPerMeter</code></td>
-<td>4</td>
-<td>垂直分辨率，单位是像素/米，有符号整数</td>
-</tr>
-<tr>
-<td><code>biClrUsed</code></td>
-<td>4</td>
-<td>位图使用的调色板中的颜色索引数<br>0表示使用所有的调色板选项</td>
-</tr>
-<tr>
-<td><code>biClrImportant</code></td>
-<td>4</td>
-<td>对图像显示有重要影响的颜色索引数目<br>0表示所有都重要</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><img src="/2019/12/01/BMP/bitmap-information.png" alt="bitmap-information"></p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>字段</th>
-<th>值</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>biSize</code></td>
-<td>0x00000028 = 40字节</td>
-<td>BMP文件信息头大小</td>
-</tr>
-<tr>
-<td><code>biWidth</code></td>
-<td>0x000002A6 = 678像素</td>
-<td>图片宽678像素</td>
-</tr>
-<tr>
-<td><code>biHeight</code></td>
-<td>0x000002E5 = 741像素</td>
-<td>图片高741像素</td>
-</tr>
-<tr>
-<td><code>biBitCount</code></td>
-<td>0x0018 = 24位</td>
-<td>24位真彩色图片</td>
-</tr>
-<tr>
-<td><code>biCompression</code></td>
-<td>0x00000000</td>
-<td>不压缩</td>
-</tr>
-<tr>
-<td><code>biSizeImage</code></td>
-<td>0x00170544 = 1508676字节</td>
-<td>=bfOffbits-54</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>理论上，biSizeImage = biWidth*biHeight*biBitCount/8，由于Windows行扫描的最小单位为4字节，所以此处biWidth应向上取4的倍数。</p>
-<p>但是从上面这张图来看，biSizeImage = 1508686字节，确实等于bfOffbits-54，但是不等于680*741*24/8 =1511640字节，也不等于678*741*24/8 =1507194字节，不解？？？</p>
-<h3 id="3-调色板-color-palette-可选项"><a href="#3-调色板-color-palette-可选项" class="headerlink" title="3. 调色板(color palette) - 可选项"></a>3. 调色板(color palette) - 可选项</h3><p>详见<a href="https://blog.csdn.net/lanbing510/article/details/8176231" target="_blank" rel="noopener">https://blog.csdn.net/lanbing510/article/details/8176231</a></p>
-<p>采用24位真彩色位图，无需使用调色板模块。用3个字节（24位）的实际RGB值表示一个像素。</p>
-<p>同理，32位真彩色位图也不需要调色板模块。用4个字节（32位）的RGBA值表示一个像素。</p>
-<h3 id="4-位图数据-bitmap-data"><a href="#4-位图数据-bitmap-data" class="headerlink" title="4. 位图数据(bitmap data)"></a>4. 位图数据(bitmap data)</h3><p>未完待续。。。</p>
-
+        <h1 id="C2W1-深度学习的实践层面"><a href="#C2W1-深度学习的实践层面" class="headerlink" title="C2W1 深度学习的实践层面"></a>C2W1 深度学习的实践层面</h1><h1 id="吴恩达深度学习C2W1-深度学习的实践层面"><a href="#吴恩达深度学习C2W1-深度学习的实践层面" class="headerlink" title="吴恩达深度学习C2W1 深度学习的实践层面"></a>吴恩达深度学习C2W1 深度学习的实践层面</h1><ul>
+<li>如何配置训练集、验证集、测试集</li>
+<li>如何分析偏差、方差，如何处理高偏差or高方差or高偏差和高方差共存的问题</li>
+<li>如何在神经网络中应用不同形式的正则化（正则化解决高方差过拟合问题）<ul>
+<li>L2正则化</li>
+<li>dropout</li>
+<li>其他正则化（数据扩增、early stopping）</li>
+</ul>
+</li>
+<li>加快神经网络训练速度的技巧（归一化输入）</li>
+<li>梯度检验（调试后向传播是否正确）</li>
+</ul>
+<h2 id="编程作业"><a href="#编程作业" class="headerlink" title="编程作业"></a>编程作业</h2><h3 id="1、初始化参数"><a href="#1、初始化参数" class="headerlink" title="1、初始化参数"></a>1、初始化参数</h3><ol>
+<li><p>不同的初始化方法可能导致性能最终不同</p>
+</li>
+<li><p>随机初始化有助于打破对称，使得不同隐藏层的单元可以学习到不同的参数。</p>
+</li>
+<li><p>初始化时，初始值不宜过大。</p>
+</li>
+<li><p><strong>He初始化搭配ReLU激活函数</strong>常常可以得到不错的效果。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># GRADED FUNCTION: initialize_parameters_he</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">initialize_parameters_he</span><span class="params">(layers_dims)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    Arguments:</span></span><br><span class="line"><span class="string">    layer_dims -- python array (list) containing the size of each layer.</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">    parameters -- python dictionary containing your parameters "W1", "b1", ..., "WL", "bL":</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    </span><br><span class="line">    np.random.seed(<span class="number">3</span>)</span><br><span class="line">    parameters = &#123;&#125;</span><br><span class="line">    L = len(layers_dims) - <span class="number">1</span> <span class="comment"># integer representing the number of layers</span></span><br><span class="line">     </span><br><span class="line">    <span class="keyword">for</span> l <span class="keyword">in</span> range(<span class="number">1</span>, L + <span class="number">1</span>):</span><br><span class="line">        <span class="comment">### START CODE HERE ### (≈ 2 lines of code)</span></span><br><span class="line">        parameters[<span class="string">'W'</span> + str(l)] = np.random.randn(layers_dims[l], layers_dims[l - <span class="number">1</span>]) * np.sqrt(<span class="number">2</span> / layers_dims[l - <span class="number">1</span>])</span><br><span class="line">        parameters[<span class="string">'b'</span> + str(l)] = np.zeros((layers_dims[l], <span class="number">1</span>))</span><br><span class="line">        <span class="comment">### END CODE HERE ###</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> parameters</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="2、正则化"><a href="#2、正则化" class="headerlink" title="2、正则化"></a>2、正则化</h3><p>解决过拟合（高方差）</p>
+<ul>
+<li><p>L2正则化（“权重衰减”：权重被改变到较小的值）</p>
+<ul>
+<li><p>compute_cost_with_regularization(A3, Y, parameters, lambd)</p>
+<p>计算代价函数时增加正则化项</p>
+</li>
+<li><p>backward_propagation_with_regularization(X, Y, cache, lambd)</p>
+<p>权重矩阵的梯度计算要加上正则化项的导数</p>
+</li>
+</ul>
+<p>若 λ 过大，可能导致高偏差</p>
+</li>
+<li><p>dropout正则化</p>
+<ul>
+<li><code>forward_propagation_with_dropout</code> instead of <code>forward_propagation</code>.</li>
+<li><code>backward_propagation_with_dropout</code> instead of <code>backward_propagation</code>.</li>
+</ul>
+<p>正则化只用于训练，不要在测试中使用</p>
+</li>
+</ul>
+<h3 id="3、梯度校验"><a href="#3、梯度校验" class="headerlink" title="3、梯度校验"></a>3、梯度校验</h3>
     </div>
 
     
@@ -475,26 +316,23 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/BMP/" rel="tag"># BMP</a>
-              <a href="/tags/%E5%A4%9A%E5%AA%92%E4%BD%93/" rel="tag"># 多媒体</a>
-              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/deeplearning/" rel="tag"># deeplearning</a>
+              <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/" rel="tag"># 吴恩达</a>
+              <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag"># 深度学习</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/25/Python-Day13-Processes-and-Threads/" rel="next" title="Python-Day13-进程和线程">
-                  <i class="fa fa-chevron-left"></i> Python-Day13-进程和线程
+                <a href="/2020/03/07/deeplearning-ai-C2W2-optimization-algorithms/" rel="next" title="deeplearning.ai_C2W2_optimization_algorithms">
+                  <i class="fa fa-chevron-left"></i> deeplearning.ai_C2W2_optimization_algorithms
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2020/01/17/hello-world/" rel="prev" title="Hello World">
-                  Hello World <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -534,7 +372,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BMP图像处理"><span class="nav-number">1.</span> <span class="nav-text">BMP图像处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BMP文件格式"><span class="nav-number">1.1.</span> <span class="nav-text">BMP文件格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-位图文件头-bmp-file-header-14字节"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. 位图文件头(bmp file header) - 14字节</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-位图信息头-bitmap-information-40字节"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. 位图信息头(bitmap information) - 40字节</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-调色板-color-palette-可选项"><span class="nav-number">1.1.3.</span> <span class="nav-text">3. 调色板(color palette) - 可选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-位图数据-bitmap-data"><span class="nav-number">1.1.4.</span> <span class="nav-text">4. 位图数据(bitmap data)</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C2W1-深度学习的实践层面"><span class="nav-number">1.</span> <span class="nav-text">C2W1 深度学习的实践层面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#吴恩达深度学习C2W1-深度学习的实践层面"><span class="nav-number">2.</span> <span class="nav-text">吴恩达深度学习C2W1 深度学习的实践层面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编程作业"><span class="nav-number">2.1.</span> <span class="nav-text">编程作业</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、初始化参数"><span class="nav-number">2.1.1.</span> <span class="nav-text">1、初始化参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、正则化"><span class="nav-number">2.1.2.</span> <span class="nav-text">2、正则化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、梯度校验"><span class="nav-number">2.1.3.</span> <span class="nav-text">3、梯度校验</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -740,7 +578,7 @@ window.addEventListener('pjax:success', () => {
       repo: 'PanosPanay.github.io',
       owner: 'PanosPanay',
       admin: ['良多'],
-      id: 'e86426e3fa25de7a5853c27ace4e0520',
+      id: 'a7e73c3a755d68e288e1b0c0baaa0e8d',
         language: 'zh-CN',
       distractionFreeMode: 'true'
     });
