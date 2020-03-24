@@ -46,24 +46,26 @@
   };
 </script>
 
-  <meta name="description" content="C2W2 优化算法吴恩达深度学习C2W2 优化算法1、mini-batch 梯度下降法 如果训练集较小（小于2000个样本），则直接使用 batch 梯度下降法（即 mini-batch size &#x3D; m） 如果训练样本数据较大，mini-batch size 一般设为 64-512 ，设为 2 的 n 次方，代码运行快一些。也有设为 1024 的，比较少见  使用 batch 梯度下降法，一次遍">
+  <meta name="description" content="吴恩达深度学习 C4W1 卷积神经网络 CNNCNN  卷积层 池化层 全连接层   卷积层设第l层（layer l）是卷积层：  输入的维度：n_H^{[l-1]} × n_W^{[l-1]} × n_c^{[l-1]} f^{[l]} &#x3D; filter size, 即过滤器大小（边长） p^{[l]} &#x3D; padding, 即填充 s^{[l]} &#x3D; stride,即步幅 n_c^{[l]}">
 <meta property="og:type" content="article">
-<meta property="og:title" content="deeplearning.ai_C2W2_optimization_algorithms">
-<meta property="og:url" content="http://yoursite.com/2020/03/07/deeplearning-ai-C2W2-optimization-algorithms/index.html">
+<meta property="og:title" content="deeplearning.ai_C4W1_Foundations_of_Convolutional_Neural_Networks">
+<meta property="og:url" content="http://yoursite.com/2020/03/23/deeplearning-ai-C4W1-Foundations-of-Convolutional-Neural-Networks/index.html">
 <meta property="og:site_name" content="良多">
-<meta property="og:description" content="C2W2 优化算法吴恩达深度学习C2W2 优化算法1、mini-batch 梯度下降法 如果训练集较小（小于2000个样本），则直接使用 batch 梯度下降法（即 mini-batch size &#x3D; m） 如果训练样本数据较大，mini-batch size 一般设为 64-512 ，设为 2 的 n 次方，代码运行快一些。也有设为 1024 的，比较少见  使用 batch 梯度下降法，一次遍">
+<meta property="og:description" content="吴恩达深度学习 C4W1 卷积神经网络 CNNCNN  卷积层 池化层 全连接层   卷积层设第l层（layer l）是卷积层：  输入的维度：n_H^{[l-1]} × n_W^{[l-1]} × n_c^{[l-1]} f^{[l]} &#x3D; filter size, 即过滤器大小（边长） p^{[l]} &#x3D; padding, 即填充 s^{[l]} &#x3D; stride,即步幅 n_c^{[l]}">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/2020/03/07/deeplearning-ai-C2W2-optimization-algorithms/image-20200307173423707.png">
-<meta property="article:published_time" content="2020-03-07T11:58:55.000Z">
-<meta property="article:modified_time" content="2020-03-23T13:57:59.960Z">
+<meta property="og:image" content="http://yoursite.com/2020/03/23/deeplearning-ai-C4W1-Foundations-of-Convolutional-Neural-Networks/image-20200324153929956.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/23/deeplearning-ai-C4W1-Foundations-of-Convolutional-Neural-Networks/image-20200324150304511.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/23/deeplearning-ai-C4W1-Foundations-of-Convolutional-Neural-Networks/image-20200324152439217.png">
+<meta property="article:published_time" content="2020-03-23T13:55:09.000Z">
+<meta property="article:modified_time" content="2020-03-24T07:44:22.809Z">
 <meta property="article:author" content="良多">
 <meta property="article:tag" content="deeplearning">
 <meta property="article:tag" content="吴恩达">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/03/07/deeplearning-ai-C2W2-optimization-algorithms/image-20200307173423707.png">
+<meta name="twitter:image" content="http://yoursite.com/2020/03/23/deeplearning-ai-C4W1-Foundations-of-Convolutional-Neural-Networks/image-20200324153929956.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/03/07/deeplearning-ai-C2W2-optimization-algorithms/">
+<link rel="canonical" href="http://yoursite.com/2020/03/23/deeplearning-ai-C4W1-Foundations-of-Convolutional-Neural-Networks/">
 
 
 <script id="page-configurations">
@@ -77,7 +79,7 @@
   };
 </script>
 
-  <title>deeplearning.ai_C2W2_optimization_algorithms | 良多</title>
+  <title>deeplearning.ai_C4W1_Foundations_of_Convolutional_Neural_Networks | 良多</title>
   
 
 
@@ -216,7 +218,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/07/deeplearning-ai-C2W2-optimization-algorithms/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/23/deeplearning-ai-C4W1-Foundations-of-Convolutional-Neural-Networks/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -229,7 +231,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          deeplearning.ai_C2W2_optimization_algorithms
+          deeplearning.ai_C4W1_Foundations_of_Convolutional_Neural_Networks
         </h1>
 
         <div class="post-meta">
@@ -239,14 +241,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-03-07 19:58:55" itemprop="dateCreated datePublished" datetime="2020-03-07T19:58:55+08:00">2020-03-07</time>
+              <time title="创建时间：2020-03-23 21:55:09" itemprop="dateCreated datePublished" datetime="2020-03-23T21:55:09+08:00">2020-03-23</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-23 21:57:59" itemprop="dateModified" datetime="2020-03-23T21:57:59+08:00">2020-03-23</time>
+                <time title="修改时间：2020-03-24 15:44:22" itemprop="dateModified" datetime="2020-03-24T15:44:22+08:00">2020-03-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -271,71 +273,101 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="C2W2-优化算法"><a href="#C2W2-优化算法" class="headerlink" title="C2W2 优化算法"></a>C2W2 优化算法</h1><h1 id="吴恩达深度学习C2W2-优化算法"><a href="#吴恩达深度学习C2W2-优化算法" class="headerlink" title="吴恩达深度学习C2W2 优化算法"></a>吴恩达深度学习C2W2 优化算法</h1><h2 id="1、mini-batch-梯度下降法"><a href="#1、mini-batch-梯度下降法" class="headerlink" title="1、mini-batch 梯度下降法"></a>1、mini-batch 梯度下降法</h2><ul>
-<li>如果训练集较小（小于2000个样本），则直接使用 batch 梯度下降法（即 mini-batch size = m）</li>
-<li>如果训练样本数据较大，<strong>mini-batch size 一般设为 64-512 ，设为 2 的 n 次方</strong>，代码运行快一些。也有设为 1024 的，比较少见</li>
-</ul>
-<p>使用 batch 梯度下降法，一次遍历训练集只能做一个梯度下降；使用 mini-batch 梯度下降法，一次遍历训练集（1 epoch），能做 n 个梯度下降（n 为划分的 mini-batch 数目）</p>
-<h2 id="2、优化算法（加速梯度下降）"><a href="#2、优化算法（加速梯度下降）" class="headerlink" title="2、优化算法（加速梯度下降）"></a>2、优化算法（加速梯度下降）</h2><h3 id="2-1、指数加权平均"><a href="#2-1、指数加权平均" class="headerlink" title="2.1、指数加权平均"></a>2.1、指数加权平均</h3><script type="math/tex; mode=display">
-v_t = \beta v_{t-1} + (1-\beta)\theta_t</script><script type="math/tex; mode=display">
-若 \theta 代表当日气温， v_t 可视为过去\frac{1}{1-\beta} 天温度的指数加权平均</script><p>占用极少内存（只占用一行代码，且计算指数加权平均数也只占用当行数字的存储，只需要把最新数据代入公式，不断覆盖就可以）</p>
-<h4 id="偏差修正"><a href="#偏差修正" class="headerlink" title="偏差修正"></a>偏差修正</h4><p>当 β 值设的较大时（eg. 0,98)，初期估测值不准（过小），可以<strong>用 $\frac{v_t}{1 - \beta^t}$ 代替 $v_t$ 来估测第 t 天的温度值。</strong></p>
-<p>随着 t 的增大，$\beta^t$ 的值接近于 0 ，偏差修正几乎没有作用。</p>
-<p>但如果你关心初始时期的偏差，在刚开始计算指数加权平均时，偏差修正能帮你在早期获取更好的估测。，<strong>使得指数加权平均数的运算更加准确（特别是在估测初期）</strong>。</p>
-<h3 id="2-2-（Momentum）动量梯度下降法"><a href="#2-2-（Momentum）动量梯度下降法" class="headerlink" title="2.2 （Momentum）动量梯度下降法"></a>2.2 （Momentum）动量梯度下降法</h3><p><strong>基本思想</strong>：<strong>计算梯度的指数加权平均数</strong>，并利用该梯度更新你的权重。</p>
-<p><strong>目的</strong>：加速梯度下降</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">On iteration t:</span><br><span class="line">	# Compute dW,db on the current mini-batch</span><br></pre></td></tr></table></figure>
-<script type="math/tex; mode=display">
-v_{dw}, v_{db} 初始值为0，一般设 \beta = 0.9，\alpha需要调试</script><script type="math/tex; mode=display">
-v_{dw} = \beta v_{dw} + (1 - \beta) dW</script><script type="math/tex; mode=display">
-v_{db} = \beta v_{db} + (1 - \beta) db</script><script type="math/tex; mode=display">
-W = W - \alpha v_{dW}, b = b - \alpha v_{db}</script><p>有2个超参数，α 和 β。<strong>β 的值常设为0.9</strong>，这相当于平均了前10次迭代的梯度，而10次迭代后已过了初始阶段，所以不需要偏差修正。</p>
-<p><strong>原理</strong>：通过以上的公式计算加权平均，结合下面的图：</p>
+        <h1 id="吴恩达深度学习-C4W1-卷积神经网络-CNN"><a href="#吴恩达深度学习-C4W1-卷积神经网络-CNN" class="headerlink" title="吴恩达深度学习 C4W1 卷积神经网络 CNN"></a>吴恩达深度学习 C4W1 卷积神经网络 CNN</h1><p>CNN</p>
 <ul>
-<li>在纵轴（偏置b）方向，平均的过程中，正负相抵，所以接近于0，所以用指数加权平均数更新偏置b，在纵轴方向波动减小。</li>
-<li>在横轴（权重W）方向，由于所有微分都指向横轴方向，所以平均值仍较大，所以用指数加权平均数更新权重W，在横轴方向依旧有更快的学习速度</li>
+<li>卷积层</li>
+<li>池化层</li>
+<li>全连接层</li>
 </ul>
-<p><img src="/2020/03/07/deeplearning-ai-C2W2-optimization-algorithms/image-20200307173423707.png" alt="image-20200307173423707"></p>
-<h3 id="2-3-RMSprop算法（均方根算法）"><a href="#2-3-RMSprop算法（均方根算法）" class="headerlink" title="2.3 RMSprop算法（均方根算法）"></a>2.3 RMSprop算法（均方根算法）</h3><p><strong>目的</strong>：加速梯度下降</p>
-<p>RMSprop和Momentum有很相似的一点，可以消除梯度下降中的摆动，并允许你使用一个更大的学习率α，从而加快你的学习算法速度。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">On iteration t:</span><br><span class="line">	# Compute dW,db on the current mini-batch</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/03/23/deeplearning-ai-C4W1-Foundations-of-Convolutional-Neural-Networks/image-20200324153929956.png" alt="image-20200324153929956"></p>
+<h2 id="卷积层"><a href="#卷积层" class="headerlink" title="卷积层"></a>卷积层</h2><p>设第l层（layer l）是卷积层：</p>
 <script type="math/tex; mode=display">
-S_{dw}, S_{db} 初始值为0，一般设 \beta = 0.999，\alpha需要调试</script><script type="math/tex; mode=display">
-S_{dW} = \beta S_{dW} + (1 - \beta) (dW)^2</script><script type="math/tex; mode=display">
-S_{db} = \beta S_{db} + (1 - \beta) (db)^2</script><script type="math/tex; mode=display">
-W:= W - \alpha \frac{dW}{\sqrt{S_{dW}}}, b := b -  \alpha \frac{db}{\sqrt{S_{db}}}</script><p><strong>原理</strong>：因为db较大，dW较小（可以从2.2的图看出纵轴的倾斜程度大，所以b的梯度db大）；所以$S<em>{db}$也较大，而$S</em>{dW}$则较小；所以相当于在更新时b的学习率较小，而W的学习率较大；这就达到了消除纵向摆动，加快横向更新速度的目的。</p>
-<p>不过为了保证在更新参数时不会出现除以0的情况，最后一步的更新操作通常更改为：</p>
+输入的维度：n_H^{[l-1]} × n_W^{[l-1]} × n_c^{[l-1]}</script><script type="math/tex; mode=display">
+f^{[l]} = filter size, 即过滤器大小（边长）</script><script type="math/tex; mode=display">
+p^{[l]} = padding, 即填充</script><script type="math/tex; mode=display">
+s^{[l]} = stride,即步幅</script><script type="math/tex; mode=display">
+n_c^{[l]} = number of filters, 即过滤器个数</script><p>则：</p>
 <script type="math/tex; mode=display">
-W:= W - \alpha \frac{dW}{\sqrt{S_{dW}} + \varepsilon}, b := b -  \alpha \frac{db}{\sqrt{S_{db}} + \varepsilon}</script><h3 id="2-4-Adam算法"><a href="#2-4-Adam算法" class="headerlink" title="2.4 Adam算法"></a>2.4 Adam算法</h3><p><strong>基本思想</strong>：<strong>结合 Momentum 和 RMSprop</strong> 。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Adam optimization algorithm</span><br></pre></td></tr></table></figure>
-<p>0初始化：</p>
-<script type="math/tex; mode=display">
-V_{dW} = 0, S_{dW} = 0, V_{db} = 0, S_{db} = 0</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">On iteration t:</span><br><span class="line">	# Compute dW,db on the current mini-batch</span><br></pre></td></tr></table></figure>
-<p>计算Momentum指数加权平均：</p>
-<script type="math/tex; mode=display">
-v_{dw} = \beta_1 v_{dw} + (1 - \beta_1) dW,v_{db} = \beta_1 v_{db} + (1 - \beta_1) db</script><p>RMSprop：</p>
-<script type="math/tex; mode=display">
-S_{dW} = \beta_2 S_{dW} + (1 - \beta_2) (dW)^2,S_{db} = \beta_2 S_{db} + (1 - \beta_2) (db)^2</script><p>偏差修正：</p>
-<script type="math/tex; mode=display">
-v_{dW}^{corrected}\frac{v_{dW}}{1 - \beta_1^t}, v_{db}^{corrected}\frac{v_{db}}{1 - \beta_1^t}</script><script type="math/tex; mode=display">
-S_{dW}^{corrected}\frac{S_{dW}}{1 - \beta_2^t},S_{db}^{corrected}\frac{S_{db}}{1 - \beta_2^t}</script><p>更新权重：</p>
-<script type="math/tex; mode=display">
-W := W - \alpha \frac{v_{dW}^{corrected}}{\sqrt{S_{dW}^{corrected}} + \varepsilon}, b := b - \alpha \frac{v_{db}^{corrected}}{\sqrt{S_{db}^{corrected}} + \varepsilon}</script><p>以上就是Adam算法，<strong>超参数缺省值</strong>如下：</p>
-<script type="math/tex; mode=display">
-\alpha 需要调试，\beta_1 = 0.9，\beta_2 = 0.999，\varepsilon = 10^{-8}</script><p>一般直接使用这些超参数的缺省值，不需要修改。</p>
-<h3 id="2-5-学习率衰减"><a href="#2-5-学习率衰减" class="headerlink" title="2.5 学习率衰减"></a>2.5 学习率衰减</h3><p>基本思想：学习率随时间慢慢减少。在学习初期学习率较大，即有较大的更新步伐；当开始收敛时，学习率较小，即更新步伐较小。</p>
-<p>几种学习率衰减模式：</p>
+每个filter的维度：f^{[l]}×f^{[l]}×n_c^{[l-1]}</script><script type="math/tex; mode=display">
+权重weights，即所有filters的集合的维度：f^{[l]} × f^{[l]} × n_c^{[l-1]} × n_c^{[l]}</script><script type="math/tex; mode=display">
+偏置bias维度：1 × 1 × 1 × n_c^{[l]}</script><script type="math/tex; mode=display">
+输出，即激活值activations的维度：n_H^{[l]} × n_W^{[l]} × n_c^{[l]}</script><p>每个filter的通道数：$n_c = 输入图像的通道数 = n_c^{[l-1]}$</p>
+<p>每个filter，即权重的参数个数：$f^{[l]} × f^{[l]}$</p>
+<p>filters的数目：$n_c^{[l]} = 检测的特征数量$</p>
+<p><strong>输出图像的高度</strong>：$n_H^{[l]} = ⌊\frac{n_H^{[l-1]} + 2p^{[l]} - f^{[l]}}{s^{[l]}} + 1⌋$</p>
+<p><strong>输出图像的宽度</strong>：$n_W^{[l]} = ⌊\frac{n_W^{[l-1]} + 2p^{[l]} - f^{[l]}}{s^{[l]}} + 1⌋$</p>
+<p><strong>输出图像的通道数</strong>：$n_c^{[l]} = l层的filters数目$</p>
+<hr>
 <ul>
-<li><script type="math/tex; mode=display">
-\alpha = \frac{1}{1 + decay\_rate * epoch\_num} \alpha_0</script><script type="math/tex; mode=display">
-decay\_rate称为衰减率，epoch\_num为代数，\alpha_0为初始学习率</script><script type="math/tex; mode=display">
-decay\_rate和\alpha_0是两个需要调整的超参数</script></li>
-<li><p>指数衰减：</p>
-<script type="math/tex; mode=display">
-\alpha = 0.95^{epoch\_num} \alpha_0</script></li>
-<li><script type="math/tex; mode=display">
-\alpha = \frac{k}{\sqrt{epoch\_num}} \alpha_0</script><script type="math/tex; mode=display">
-或者 \alpha = \frac{k}{\sqrt{t}} \alpha_0, t为mini-batch的序号</script></li>
+<li><p>kernel（核）/ <strong>filter</strong>（过滤器）</p>
+</li>
+<li><p>检测n个边缘特征，就设置n个filters，输出图片的通道数也等于n。</p>
+</li>
+<li><p>padding卷积</p>
+<ul>
+<li>Valid卷积：不填充</li>
+<li>Same卷积：填充后输出和输入的大小一致<ul>
+<li>即$\frac{n + 2p -f}{s} + 1 = n$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>推荐只是用奇数的过滤器，即将f设为奇数</p>
+</li>
+<li><p>向下取整操作，意味着只有当filter完全包含在（填充完的）图像内部时，才进行相乘操作。</p>
+</li>
+<li><p>三维卷积</p>
+<ul>
+<li><p><strong>filters的通道数必须和输入图像的通道数匹配</strong></p>
+</li>
+<li><p>假设filter size=3，通道数=3，则每次，先取图片红色通道的9个数字，与filter第一通道的9个数相乘再相加；然后再分别取绿色通道、蓝色通道执行相同操作，再把这些数相加，得到输出值</p>
+<p><img src="/2020/03/23/deeplearning-ai-C4W1-Foundations-of-Convolutional-Neural-Networks/image-20200324150304511.png" alt="image-20200324150304511"></p>
+</li>
+<li><p>每个filter得到的输出图像通道数仍为1，与输入图像通道数无关。</p>
+</li>
+<li><p>输出图像最终的通道数 = filters 个数</p>
+</li>
+</ul>
+</li>
+<li><p>即使输入图片很大，CNN的参数却很少，可以避免过拟合。</p>
+</li>
+<li><p>卷积层2个主要优势：</p>
+<ul>
+<li>参数共享</li>
+<li>稀疏连接</li>
+</ul>
+</li>
+</ul>
+<h2 id="池化层"><a href="#池化层" class="headerlink" title="池化层"></a>池化层</h2><ul>
+<li><p>池化层可以缩减模型大小，提高计算速度，同时提高所提取特征的鲁棒性</p>
+</li>
+<li><p>两种池化类型：</p>
+<ul>
+<li>最大池化：最常用</li>
+<li>平均池化：用于很深的神经网络</li>
+</ul>
+<p><strong>最常用的是最大池化</strong></p>
+</li>
+<li><p>池化有一组超参数（f，s等），但是没有需要学习的参数，所以一旦确定了f，s，它就是一个固定运算，梯度下降无需改变任何值。</p>
+<p>在计算神经网络有多少层时，通道只统计具有权重和参数的层。<strong>而池化层没有权重和参数</strong>，只有一些超参数，所以池化层和卷积层共同作为一层。</p>
+</li>
+<li><p><strong>池化</strong>是对输入图像$n_c$个通道中的每个通道，都单独执行池化计算。所以<strong>输出通道与输入通道数相同</strong>。</p>
+<p><img src="/2020/03/23/deeplearning-ai-C4W1-Foundations-of-Convolutional-Neural-Networks/image-20200324152439217.png" alt="image-20200324152439217"></p>
+</li>
+<li><p>池化的超级参数包括filter size（f）和步幅（s）</p>
+<p><strong>常用的超参数设置为：f = 2, s = 2</strong></p>
+<p>也有 f = 3, s = 2的情况</p>
+</li>
+<li><p>最大池化很少用到超参数padding，所以最常用的：<strong>p = 0</strong></p>
+</li>
+<li><p>因此，若最大池化的输入：$n_H × n_W × n_c$，设 p = 0</p>
+<p>则，输出：$⌊\frac{n_H - f}{s} + 1⌋ × ⌊\frac{n_W - f}{s} + 1⌋ × n_c$</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><strong>池化层没有参数，卷积层参数相对较少，许多参数都存在于神经网络的全连接层。</strong></li>
+<li><strong>尽量不要自己设置超参数，而是查看文献中别人使用了哪些超参数，选一个别人任务中效果很好的架构，那么它也有可能适用于你自己的应用程序。</strong></li>
 </ul>
 
     </div>
@@ -355,17 +387,14 @@ decay\_rate和\alpha_0是两个需要调整的超参数</script></li>
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2020/03/05/tensorflow/" rel="next" title="tensorflow">
-                  <i class="fa fa-chevron-left"></i> tensorflow
+                <a href="/2020/03/07/deeplearning-ai-C2W1-practical-aspects-of-deep-learning/" rel="next" title="deeplearning.ai_C2W1_practical_aspects_of_deep_learning">
+                  <i class="fa fa-chevron-left"></i> deeplearning.ai_C2W1_practical_aspects_of_deep_learning
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2020/03/07/deeplearning-ai-C2W1-practical-aspects-of-deep-learning/" rel="prev" title="deeplearning.ai_C2W1_practical_aspects_of_deep_learning">
-                  deeplearning.ai_C2W1_practical_aspects_of_deep_learning <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -405,7 +434,7 @@ decay\_rate和\alpha_0是两个需要调整的超参数</script></li>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C2W2-优化算法"><span class="nav-number">1.</span> <span class="nav-text">C2W2 优化算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#吴恩达深度学习C2W2-优化算法"><span class="nav-number">2.</span> <span class="nav-text">吴恩达深度学习C2W2 优化算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、mini-batch-梯度下降法"><span class="nav-number">2.1.</span> <span class="nav-text">1、mini-batch 梯度下降法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、优化算法（加速梯度下降）"><span class="nav-number">2.2.</span> <span class="nav-text">2、优化算法（加速梯度下降）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1、指数加权平均"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.1、指数加权平均</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#偏差修正"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">偏差修正</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-（Momentum）动量梯度下降法"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2 （Momentum）动量梯度下降法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-RMSprop算法（均方根算法）"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.3 RMSprop算法（均方根算法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-Adam算法"><span class="nav-number">2.2.4.</span> <span class="nav-text">2.4 Adam算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-学习率衰减"><span class="nav-number">2.2.5.</span> <span class="nav-text">2.5 学习率衰减</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#吴恩达深度学习-C4W1-卷积神经网络-CNN"><span class="nav-number">1.</span> <span class="nav-text">吴恩达深度学习 C4W1 卷积神经网络 CNN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#卷积层"><span class="nav-number">1.1.</span> <span class="nav-text">卷积层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#池化层"><span class="nav-number">1.2.</span> <span class="nav-text">池化层</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -661,7 +690,7 @@ window.addEventListener('pjax:success', () => {
       repo: 'PanosPanay.github.io',
       owner: 'PanosPanay',
       admin: ['良多'],
-      id: '4bb0925294fda28233c0124f65feab72',
+      id: '0df37b680edda40627e773ed1b423142',
         language: 'zh-CN',
       distractionFreeMode: 'true'
     });
