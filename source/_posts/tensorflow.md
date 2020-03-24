@@ -111,6 +111,12 @@ categories:
    [43 50]], shape=(2, 2), dtype=int32)
    ```
 
+7. pycharm
+
+   新建项目，选择已存在的虚拟环境tf2
+
+   ![image-20200312151710275](tensorflow/image-20200312151710275.png)
+
 
 ## 2、错误记录
 
